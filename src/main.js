@@ -4,10 +4,9 @@ import Vue from "vue";
 import App from "./App";
 import store from "./vuex/store";
 import game from "./game/vue-game-plugin";
-import { mixin as contextMixin } from "./components/ContextMenu.vue";
 
 //import {mixin as contextMixin} from "./components/ContextMenu.vue"
-import ContextMenu from "./../../../vue-contextmenu";
+import ContextMenu from "./contextmenu";
 
 Vue.config.productionTip = false;
 Vue.use(game);

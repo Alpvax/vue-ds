@@ -1,5 +1,5 @@
 <template>
-  <div id="app"> <!-- @click.right.prevent="showContextMenu" @click="hideContextMenu"> -->
+  <div id="app" v-contextmenu><!-- ="contextMenuItems"> @click.right.prevent="showContextMenu" @click="hideContextMenu"> -->
     <Output/>
     <Overview/>
     <player-stats/>
@@ -25,7 +25,7 @@ export default {
     PlayerStats,
     PlayerInventory,
     InputBar,
-    ContextMenu
+    //ContextMenu
   },
   created() {
     this.$game.startGame();
