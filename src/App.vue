@@ -1,11 +1,11 @@
 <template>
-  <div id="app" @click="hideContextMenu" @click.right.prevent="showContextMenu">
+  <div id="app"> <!-- @click.right.prevent="showContextMenu" @click="hideContextMenu"> -->
     <Output/>
     <Overview/>
     <player-stats/>
     <player-inventory/>
     <input-bar/>
-    <context-menu v-show="contextMenuData.show" :items="contextMenuData.items" :pos="contextMenuData.pos"/>
+    <!-- <context-menu v-show="contextMenuData.show" :items="contextMenuData.items" :pos="contextMenuData.pos"/> -->
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 import Output from "./components/Output";
 import Overview from "./components/Overview";
 import InputBar from "./components/InputBar";
-import ContextMenu from "./components/ContextMenu";
+//import ContextMenu from "./components/ContextMenu";
 import PlayerStats from "./components/PlayerStats";
 import PlayerInventory from "./components/PlayerInventory";
 
