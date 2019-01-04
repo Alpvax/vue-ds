@@ -39,7 +39,7 @@ export default {
       this.$store.dispatch("hideContextMenu");
     },
     contextMenuItems(vm) {
-      return [{text: "WhoAmI?", call(){console.log(vm);}}]
+      return [{text: "WhoAmI?", action(){console.log(vm);}}]
     }
   },
   computed: {
@@ -130,6 +130,11 @@ export default {
 
 #player-inventory {
   grid-area: player-inventory;
+}
+
+.context-menu {
+  color: var(--text-blur);
+  background: var(--ui-border);
 }
 
 #app,

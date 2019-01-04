@@ -1,6 +1,6 @@
 <template>
-  <div class="context-menu" v-show="show" ref="menu" :style="style">
-    <div v-for="(item, i) in this.items" :key="i">
+  <div class="context-menu" v-bind:id="getmenuid" v-show="show" ref="menu" :style="style">
+    <div v-for="(item, i) in items" :key="i">
       <div @click.stop="handleAction(item)" class="context-item">
         {{item.text}}
       </div>
@@ -9,20 +9,16 @@
 </template>
 
 <script>
-let data = {
-  items: [],
-  pos: {
-    x: 0,
-    y: 0
-  }
-};
-
 export default {
-  data() {
-    return data;
+  props: {
+    "items": {type: Array, required: true},
+    "pos": {type: Object, required: true},
+    "menuid": {default: ""},
+    "parent": {type: Object, required: false}
   },
   methods: {
     handleAction(item) {
+      console.log("Executing:", item)
       if (item.isParent) {
         item.action();
       } else {
@@ -38,12 +34,16 @@ export default {
     pos() {
       return this.$root.pos
     },*/
+    getmenuid() {
+      return "context-menu" + this.menuid;
+    },
     show() {
-      return this.items.length > 0
+      return this.items.length > 0;
     },
     style() {
+      console.debug(this.menuid)
       const { offsetWidth, offsetHeight } = document.getElementById(
-        "context-menu"
+        "context-menu" + this.menuid
       ) || { offsetWidth: 0, offsetHeight: 0 };
       const [posX, posY] = [this.pos.x, this.pos.y];
       return {
