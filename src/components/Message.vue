@@ -1,5 +1,5 @@
 <template>
-  <div class="messages" @click.right.stop.prevent="showContextMenu">
+  <div class="messages" v-contextmenu>
     <div class="entity">{{entity}}</div>
     <div class="message">{{message}}</div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div id="context-menu" v-show="show" ref="menu" :style="style">
+  <div class="context-menu" v-show="show" ref="menu" :style="style">
     <div v-for="(item, i) in this.items" :key="i">
       <div @click.stop="handleAction(item)" class="context-item">
         {{item.text}}
@@ -19,7 +19,7 @@ let data = {
 
 export default {
   data() {
-    return this.$root.data;
+    return data;
   },
   methods: {
     handleAction(item) {

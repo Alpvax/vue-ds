@@ -37,6 +37,9 @@ export default {
     },
     hideContextMenu(event) {
       this.$store.dispatch("hideContextMenu");
+    },
+    contextMenuItems(vm) {
+      return [{text: "WhoAmI?", call(){console.log(vm);}}]
     }
   },
   computed: {
