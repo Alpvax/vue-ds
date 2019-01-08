@@ -27,7 +27,7 @@
                 @mouseleave="highlight()"
                 @click.left="toggleExpanded(item)">
               <span class="item-count">{{item.count}}</span>
-              <span class="item-name">{{item.count === 1 ? item.name : item.plural}}</span>
+              <span class="item-name">{{item.displayname}}</span>
                 <div v-for="(expanded, i) in item.expanded"
                     :key="`expanded-${i}`"
                     @mouseenter="highlight(null, expanded.loc)"
@@ -35,7 +35,7 @@
                     v-show="expandedItem === item.name"
                     class="expanded-items">
                   <span class="item-count">{{expanded.count}}</span>
-                  <span class="expanded-name">{{expanded.count === 1 ? expanded.name : expanded.plural}}</span>
+                  <span class="expanded-name">{{expanded.name}}</span>
                   <span class="item-value">{{expanded.totalValue}}</span>
                   <span class="direction">({{expanded.dir}})</span>
                 </div>
